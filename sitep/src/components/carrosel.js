@@ -1,4 +1,5 @@
 import styles from "./css/Carrosel.css";
+import './css/Responsivo.css';
 import image1 from './imgs/frente.jpeg';
 import image2 from './imgs/eeep.jpg';
 import { Swiper, SwiperSlide } from 'swiper/react';

@@ -1,4 +1,3 @@
-import './App.css';
 import Carrosel from './components/carrosel';
 import HeaderTeste from "./components/header"
 
