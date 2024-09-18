@@ -1,129 +1,150 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  .HeaderGeral {
-    background-color: rgb(36, 201, 30);
-    width: 100%;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.HeaderGeral {
+  background-color: rgb(36, 201, 30);
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1000;
+}
+
+.NomeEscola {
+  color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 1.8rem;
+  text-align: left;
+  flex: 1;
+}
+
+.Navbar {
+  display: flex;
+  align-items: center;
+}
+
+.Navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.Navbar ul li {
+  color: rgb(253, 253, 253);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 5px 0px;
+  transition: background-color 0.3s;
+}
+
+.Navbar ul li:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+.MenuToggle {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+@media (max-width: 1024px) {
   .NomeEscola {
-    color: white;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 1.8rem;
-    text-align: left;
-    flex: 1;
+    font-size: 1.6rem;
   }
-  
+
+  .Navbar ul {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .NomeEscola {
+    font-size: 1.4rem;
+  }
+
   .Navbar {
-    display: flex;
+    display: none;
   }
-  
+
+  .MenuToggle {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .HeaderGeral {
+    flex-direction: column;
+  }
+
+  .MenuToggle {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    z-index: 1001;
+  }
+
+  .Navbar {
+    position: fixed;
+    top: 50px;
+    right: 0;
+    width: 100%;
+    background: rgb(36, 201, 30);
+    visibility: hidden;
+    opacity: 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    z-index: 1000;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .Navbar.open {
+    visibility: visible;
+    opacity: 1;
+  }
+
   .Navbar ul {
     display: flex;
-    list-style: none;
-    gap: 30px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
   }
-  
+
   .Navbar ul li {
-    color: white;
-    font-size: 1.5rem;
-    cursor: pointer;
-    padding: 5px 0px;
-    transition: background-color 0.3s;
+    font-size: 1.2rem;
   }
-  
-  .Navbar ul li:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 5px;
+
+  .NomeEscola {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
   }
-  
-  .MenuToggle {
-    display: none;
-    font-size: 1.5rem;
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
+}
+
+.swiper {
+  height: 400px;
+  transition: height 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .swiper {
+    height: 300px;
   }
-  
-  @media (max-width: 768px) {
-    .NomeEscola {
-      font-size: 1.4rem;
-    }
-  
-    .Navbar ul {
-      gap: 15px;
-    }
-  
-    .MenuToggle {
-      display: block;
-    }
+}
+
+@media (max-width: 480px) {
+  .swiper {
+    height: 200px;
   }
-  
-  @media (max-width: 480px) {
-    .HeaderGeral {
-      flex-direction: column;
-    }
-  
-    .MenuToggle {
-      display: block;
-      position: absolute;
-      right: 20px;
-      top: 10px;
-      z-index: 1000;
-    }
-  
-    .Navbar {
-      position: absolute;
-      top: 60px;
-      right: 0;
-      width: 100%;
-      background: rgb(36, 201, 30);
-      visibility: hidden;
-      opacity: 0;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 10px;
-      padding: 10px;
-      z-index: 10;
-      transition: opacity 0.3s ease, visibility 0.3s ease;
-    }
-  
-    .Navbar.open {
-      visibility: visible;
-      opacity: 1;
-    }
-  
-    .Navbar ul {
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 10px;
-    }
-  
-    .NomeEscola {
-      margin-bottom: 10px;
-      text-align: left;
-      font-size: 1.2rem;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .swiper {
-      height: 300px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .swiper {
-      height: 200px;
-    }
-  }
-  
+}
